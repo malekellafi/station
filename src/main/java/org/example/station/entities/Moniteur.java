@@ -1,12 +1,9 @@
 package org.example.station.entities;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.Calendar;
 
 public class Moniteur {
     @Id
@@ -15,8 +12,14 @@ public class Moniteur {
     private String nomM;
     private String prenomM;
     private LocalDate dateRecru;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "moniteur")
-    private Set<Cours> cours;
+    @ManyToOne
+    private Cours cours;
 
 
+    public Calendar getCours() {
+        return null;
+    }
+
+    public void setCours(Cours objects) {
+    }
 }

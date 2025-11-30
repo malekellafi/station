@@ -6,6 +6,8 @@ import org.example.station.entities.Abonnement;
 import org.example.station.entities.Piste;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -28,4 +30,25 @@ public class Skieur {
 
     @ManyToMany(mappedBy = "skieur")
     private Set<Piste> pistes;
+
+    public void add(Inscription saved) {
+    }
+
+    public Skieur getInscriptions() {
+        return null;
+     }
+
+    public LocalDate getDateNaissance() {
+        return dateDeNaissance;
+    }
+
+    public void setInscriptions(ArrayList<Object> objects) {
+    }
+
+    public int size() {
+        return 0;
+    }
+
+
+
 }

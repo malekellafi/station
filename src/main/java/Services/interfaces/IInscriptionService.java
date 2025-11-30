@@ -13,4 +13,17 @@ public interface IInscriptionService {
     Inscription getInscriptionById(long id);
 
     Inscription addInscription(Inscription inscription);
+
+    Inscription addInscriptionAndAssignToSkieur(Inscription inscription, Long numSkieur);
+
+    Inscription assignRegistrationToCourse(Long numRegistration, Long numCourse);
+
+    Inscription addRegistrationAndAssignToSkieur(Inscription inscription, Long numSkier);
+
+    Inscription addRegistrationAndAssignToSkierAndCourse(
+            Inscription inscription,
+            Long numSkieur,
+            Long numCours);
+
+    List<Inscription> getExpiringInscriptions();
 }

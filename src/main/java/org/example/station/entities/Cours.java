@@ -1,8 +1,14 @@
 package org.example.station.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
 import java.util.Set;
+@Getter
+@Setter
+
 
 public class Cours {
     @Id
@@ -21,4 +27,17 @@ public class Cours {
 
 
 
+
+    public Skieur getInscriptions() {
+        return null;
+    }
+
+
+
+    public void setInscriptions( List<Inscription> inscriptions ) {
+    }
+
+    public Object getTypeCours() {
+        return null;
+    }
 }
