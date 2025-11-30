@@ -51,8 +51,38 @@ public class InscriptionController implements IInscriptionService {
         return null;
     }
 
+
     @GetMapping("/{id}")
     public Inscription getInscription(@PathVariable Long id) {
         return inscriptionService.getInscriptionById(id);
+    }
+
+    @PostMapping("/assignToSkieur/{numSkieur}")
+    public Inscription addInscriptionAndAssignToSkieur(@RequestBody Inscription inscription, @PathVariable Long numSkieur) {
+        return inscriptionService.addInscriptionAndAssignToSkieur(inscription, numSkieur);
+    }
+
+    @PutMapping ("/assignToCourse/{numRegistration}/{numCourse}")
+    public Inscription assignRegistrationToCourse(@PathVariable Long numRegistration, @PathVariable Long numCourse) {
+        return inscriptionService.assignRegistrationToCourse(numRegistration, numCourse);
+
+    }
+
+    @Override
+    public Inscription addRegistrationAndAssignToSkieur(Inscription inscription, Long numSkier) {
+        return null;
+    }
+
+    @PostMapping("/assignToSkierAndCourse/{numSkieur}/{numCours}")
+    public Inscription addRegistrationAndAssignToSkierAndCourse(
+            @RequestBody Inscription inscription,
+            @PathVariable Long numSkieur,
+            @PathVariable Long numCours) {
+        return inscriptionService.addRegistrationAndAssignToSkierAndCourse(inscription, numSkieur, numCours);
+    }
+
+    @Override
+    public List<Inscription> getExpiringInscriptions() {
+        return List.of();
     }
 }

@@ -32,6 +32,8 @@ public class SkieurController implements ISkieurService {
 
     }
 
+
+
     @DeleteMapping("/removeSkieur")
     public void removeSkieur(long numSkieur) {
         skieurService.removeSkieur(numSkieur);
@@ -46,6 +48,11 @@ public class SkieurController implements ISkieurService {
     public List<Skieur> retrieveAllSkieurs() {
         return null;
     }
+    @PostMapping("/addAndAssignCourse/{numCourse}")
+    public Skieur addSkierAndAssignToCourse(@RequestBody Skieur skieur, @PathVariable Long numCourse) {
+        return skieurService.addSkierAndAssignToCourse(skieur, numCourse);
+    }
+
 
 
 }
